@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+
+.header {
+  border: 1px solid vars.$alt-color;
+  margin-block-start: vars.$gutter;
+
+  .header__list {
+    display: flex;
+    justify-content: center;
+    
+    .header__list__item {
+      margin: vars.$gutter;
+      margin-block-start: vars.$gutter * 1.5;
+      color: vars.$dark-color;
+
+    &:hover {
+      color: vars.$primary-color;
+    }
+    }
+  }
+}

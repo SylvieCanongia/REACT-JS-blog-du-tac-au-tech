@@ -2,5 +2,15 @@
 @use 'vars';
 
 body {
-  font-family: sans-serif;
+  font-family: vars.$global-font 'sans-serif';
+  font-weight: vars.$global-font-weight;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: vars.$title-font;
+  font-weight: vars.$title-font-weight;
+  line-height: 1.2;
 }
