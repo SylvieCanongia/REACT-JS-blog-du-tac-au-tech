@@ -2,20 +2,25 @@
 
 .header {
   border: 1px solid vars.$alt-color;
-  margin-block-start: vars.$gutter;
+  border-inline: none;
+  margin-block: vars.$gutter;
 
   .header__list {
     display: flex;
     justify-content: center;
     
     .header__list__item {
-      margin: vars.$gutter;
+      margin: vars.$gutter vars.$gutter-small;
       margin-block-start: vars.$gutter * 1.5;
       color: vars.$dark-color;
 
-    &:hover {
-      color: vars.$primary-color;
+      &:hover {
+        color: vars.$primary-color;
+      }
     }
+
+    .header__list__link {
+      padding: vars.$gutter-base;
     }
   }
 }

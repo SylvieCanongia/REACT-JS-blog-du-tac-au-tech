@@ -3,7 +3,9 @@ $primary-color: #e52354;
 $alt-color: #ddd;
 $dark-color: #101010;
 $light-color: #fff;
-$gutter: 2rem;
+$gutter: 32px;
+$gutter-small: 16px;
+$gutter-base: 8px;
 
 // Global
 $global-font: 'Roboto', sans-serif;
@@ -13,7 +15,15 @@ $global-font-weight: 300;
 $title-font: 'Oswald', sans-serif;
 $title-font-weight: 500;
 $title-color: #000;
+$title-font-size-large: 2rem;
+$title-font-size-medium: 1.5rem;
+
+$category-font-size: 0.9rem;
+
 
 // Post general
 $posts-text-color: #666;
 $posts-hover-color: #f7f7f7;
+
+// Radius
+$base-radius: 3px;
