@@ -31,7 +31,7 @@
         width: fit-content;
         color: vars.$light-color;
         text-transform: uppercase;
-        padding: (vars.$gutter-base / 4) vars.$gutter-base * 1.5;
+        padding: (vars.$gutter-base * 0.25) (vars.$gutter-base * 1.5);
         margin-block: vars.$gutter-base;
         font-size: vars.$category-font-size;
         border-radius: vars.$base-radius;
