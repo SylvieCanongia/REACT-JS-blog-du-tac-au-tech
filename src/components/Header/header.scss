@@ -14,7 +14,7 @@
   color: vars.$dark-color;
   list-style-type: none;
 
-  &:hover {
+  &:hover, &--active {
       color: vars.$primary-color;
     }
   }

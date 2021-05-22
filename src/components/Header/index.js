@@ -1,4 +1,5 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 
 import './header.scss';
 
@@ -11,5 +12,14 @@ const Header = () => (
     <a className="header__link">Autre</a>
   </nav>
 );
+
+// Header.propTypes = {
+//   categories: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       route: PropTypes.string.isRequired,
+//       label: PropTypes.string.isRequired,
+//     }).isRequired,
+//   ).isRequired,
+// };
 
 export default Header;
