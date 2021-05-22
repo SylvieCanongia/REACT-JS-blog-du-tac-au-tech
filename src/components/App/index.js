@@ -1,5 +1,7 @@
 // == Import npm
 import React from 'react';
+import posts from 'src/data/posts';
+
 import Header from '../Header';
 import Posts from '../Posts';
 import Footer from '../Footer';
@@ -11,7 +13,7 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <Posts />
+    <Posts posts={posts} />
     <Footer />
   </div>
 );
