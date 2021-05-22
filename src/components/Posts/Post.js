@@ -6,11 +6,11 @@ const Post = ({
   category,
   title,
   excerpt }) => (
-    <div className="posts__card">
-      <h2 className="posts_card__title">{title}</h2>
-      <div className="posts__card__category">{category}</div>
-      <p className="posts__card__excerpt">{excerpt}</p>
-    </div>
+    <article className="posts__single">
+      <h2 className="posts_single__title">{title}</h2>
+      <div className="posts__single__category">{category}</div>
+      <p className="posts__single__excerpt">{excerpt}</p>
+    </article>
 );
 
 Post.propTypes = {

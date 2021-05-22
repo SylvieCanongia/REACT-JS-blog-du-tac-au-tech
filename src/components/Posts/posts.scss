@@ -16,19 +16,19 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   
-    .posts__card {
+    .posts__single {
       margin: vars.$gutter-small;
       padding: vars.$gutter-small;
       &:hover {
         background: vars.$posts-hover-color;
       }
 
-      .posts_card__title {
+      .posts_single__title {
         color: vars.$title-color;
         font-size: vars.$title-font-size-medium;
       }
 
-      .posts__card__category {
+      .posts__single__category {
         background: vars.$primary-color;
         width: fit-content;
         color: vars.$light-color;
@@ -39,7 +39,7 @@
         border-radius: vars.$base-radius;
       }
 
-      .posts__card__excerpt {
+      .posts__single__excerpt {
         color: vars.$posts-text-color;
       }
     }
