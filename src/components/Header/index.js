@@ -4,13 +4,11 @@ import './header.scss';
 
 const Header = () => (
   <nav className="header">
-    <ol className="header__list">
-      <li className="header__list__item"><a className="header__list__link"  href="#">Accueil</a></li>
-      <li className="header__list__item"><a className="header__list__link"  href="#">React</a></li>
-      <li className="header__list__item"><a className="header__list__link"  href="#">Vue JS</a></li>
-      <li className="header__list__item"><a className="header__list__link"  href="#">Formations</a></li>
-      <li className="header__list__item"><a className="header__list__link"  href="#">Autre</a></li>
-    </ol>
+    <a className="header__link header__link--active">Accueil</a>
+    <a className="header__link">React</a>
+    <a className="header__link">Vue JS</a>
+    <a className="header__link">Formations</a>
+    <a className="header__link">Autre</a>
   </nav>
 );
 

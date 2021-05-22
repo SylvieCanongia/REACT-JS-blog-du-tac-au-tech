@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import posts from 'src/data/posts';
+import categories from 'src/data/categories';
 
 import Header from '../Header';
 import Posts from '../Posts';
@@ -12,7 +13,7 @@ import './styles.scss';
 // == Composant
 const App = () => (
   <div className="app">
-    <Header />
+    <Header categories={categories} />
     <Posts posts={posts} />
     <Footer />
   </div>
