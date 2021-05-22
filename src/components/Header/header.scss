@@ -4,18 +4,21 @@
   border: 1px solid vars.$alt-color;
   border-inline: none;
   margin-block: vars.$gutter;
-  display: flex;
-  justify-content: center;
+  
+  .header__nav {
+    display: flex;
+    justify-content: center;
 
-  .header__link {
-  padding: vars.$gutter-base;
-  margin: vars.$gutter vars.$gutter-small;
-  margin-block-start: vars.$gutter * 1.5;
-  color: vars.$dark-color;
-  list-style-type: none;
-
-  &:hover, &--active {
-      color: vars.$primary-color;
-    }
+    .header__nav__link {
+      padding: vars.$gutter-base;
+      margin: vars.$gutter vars.$gutter-small;
+      margin-block-start: vars.$gutter * 1.5;
+      color: vars.$dark-color;
+      list-style-type: none;
+    
+      &:hover, &--active {
+          color: vars.$primary-color;
+        }
+      }
   }
 }
