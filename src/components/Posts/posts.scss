@@ -1,6 +1,8 @@
 @use 'src/styles/vars';
 
 .posts {
+  padding-inline: vars.$gutter;
+  
   .posts__title {
     color: vars.$primary-color;
     text-align: center;
