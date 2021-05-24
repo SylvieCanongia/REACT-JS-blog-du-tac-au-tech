@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Post = ({
-  id,
   category,
   title,
   excerpt }) => (
@@ -14,7 +13,6 @@ const Post = ({
 );
 
 Post.propTypes = {
-  id: PropTypes.number.isRequired,
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
