@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 // import postsData from 'src/data/posts';
@@ -17,38 +17,38 @@ import './styles.scss';
 
 // == Composant
 const App = () => {
+  // articles list
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // tell if loading is in progress
+  const [loading, setLoading] = useState(true);
 
   const loadPosts = () => {
-    setLoading(true);
-    console.log('C\'est le moment de charger les articles');
+    // setLoading(true);
 
     axios.get('https://oclock-open-apis.vercel.app/api/blog/posts')
       .then((response) => {
         // handle success
-        // console.log('.then');
-        console.log(response.data);
+        // console.log(response.data);
         setPosts(response.data);
       })
       .catch((error) => {
         // handle error
-        // console.log('.catch');
         console.log(error);
       })
       .finally(() => {
         // always executed
-        // console.log('finally');
         setLoading(false);
       });
-    console.log('Après l\'envoi de la requête');
-
-    // console.log(loading);
   };
+
+  // effect only after the first render of app
+  useEffect(() => {
+    loadPosts();
+  }, []);
+
   return (
     <div className="app">
       <Header categories={categoriesData} />
-      <button type="button" onClick={loadPosts}>Charger les articles</button>
       {loading && <Loader />}
       <Switch>
         {categoriesData.map((category) => (
