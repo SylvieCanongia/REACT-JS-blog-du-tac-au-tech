@@ -8,12 +8,12 @@ export default [
     label: 'React',
   },
   {
-    route: '/vue',
-    label: 'Vue',
+    route: '/angular',
+    label: 'Angular',
   },
   {
-    route: '/formations',
-    label: 'Formations',
+    route: '/o-clock',
+    label: 'O’clock',
   },
   {
     route: '/autre',

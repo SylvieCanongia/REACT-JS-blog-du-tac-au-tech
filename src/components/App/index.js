@@ -1,7 +1,8 @@
 // == Import npm
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import postsData from 'src/data/posts';
+import axios from 'axios';
+// import postsData from 'src/data/posts';
 import categoriesData from 'src/data/categories';
 
 import { getPostsByCategory } from 'src/utils/selectors';
@@ -14,29 +15,55 @@ import NotFound from '../NotFound';
 import './styles.scss';
 
 // == Composant
-const App = () => (
-  <div className="app">
-    <Header categories={categoriesData} />
+const App = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    <Switch>
-      {categoriesData.map((category) => {
-        const postsByCategory = getPostsByCategory(postsData, category.label);
+  const loadPosts = () => {
+    setLoading(true);
+    console.log('C\'est le moment de charger les articles');
 
-        return (
+    axios.get('https://oclock-open-apis.vercel.app/api/blog/posts')
+      .then((response) => {
+        // handle success
+        // console.log('.then');
+        console.log(response.data);
+        setPosts(response.data);
+      })
+      .catch((error) => {
+        // handle error
+        // console.log('.catch');
+        console.log(error);
+      })
+      .finally(() => {
+        // always executed
+        // console.log('finally');
+        setLoading(false);
+      });
+    console.log('Après l\'envoi de la requête');
+
+    // console.log(loading);
+  };
+  return (
+    <div className="app">
+      <Header categories={categoriesData} />
+      <button type="button" onClick={loadPosts}>Charger les articles</button>
+      {loading && <div>Chargement en cours...</div>}
+      <Switch>
+        {categoriesData.map((category) => (
           <Route exact path={category.route} key={category.label}>
-            <Posts posts={postsByCategory} />
+            <Posts posts={getPostsByCategory(posts, category.label)} />
           </Route>
-        );
-      })}
-      {/* Test redirection */}
-      {/* <Redirect from="/jquery" to="/autre" /> */}
-      <Route>
-        <NotFound />
-      </Route>
-    </Switch>
-    <Footer />
-  </div>
-);
+        ))}
+        <Redirect from="/jquery" to="/autre" />
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
 
 // == Export
 export default App;
