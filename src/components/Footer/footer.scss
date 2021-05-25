@@ -1,7 +1,8 @@
 @use 'src/styles/vars';
 
 .footer {
-  margin-block: vars.$gutter-base;
+  margin-block-start: auto;
+  margin-block-end: vars.$gutter-base;
   padding-block: vars.$gutter * 2;
   text-align: center;
   background: vars.$dark-color;

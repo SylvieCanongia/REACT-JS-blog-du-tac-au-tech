@@ -1,0 +1,22 @@
+@use 'src/styles/vars';
+
+.notFound {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .notFound__404 {
+    font-size: vars.$title-font-size-large * 4;
+    font-weight: vars.$title-font-weight;
+  }
+
+  .notFound__content {
+    font-size: vars.$title-font-size-medium;
+
+    span {
+      color: vars.$primary-color;
+      cursor: pointer;
+    }
+  }
+}

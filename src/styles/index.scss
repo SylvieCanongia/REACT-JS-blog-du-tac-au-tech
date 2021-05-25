@@ -1,6 +1,10 @@
 @use 'reset';
 @use 'vars';
 
+html, body, #root {
+  height: 100%;
+}
+
 body {
   font-family: vars.$global-font 'sans-serif';
   font-weight: vars.$global-font-weight;
