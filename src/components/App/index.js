@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import postsData from 'src/data/posts';
 import categoriesData from 'src/data/categories';
 
@@ -28,6 +28,8 @@ const App = () => (
           </Route>
         );
       })}
+      {/* Test redirection */}
+      {/* <Redirect from="/jquery" to="/autre" /> */}
       <Route>
         <NotFound />
       </Route>
