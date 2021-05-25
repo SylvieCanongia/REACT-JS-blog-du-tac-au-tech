@@ -6,10 +6,11 @@ import axios from 'axios';
 import categoriesData from 'src/data/categories';
 
 import { getPostsByCategory } from 'src/utils/selectors';
-import Header from '../Header';
-import Posts from '../Posts';
-import Footer from '../Footer';
-import NotFound from '../NotFound';
+import Header from 'src/components/Header';
+import Posts from 'src/components/Posts';
+import Footer from 'src/components/Footer';
+import NotFound from 'src/components/NotFound';
+import Loader from 'src/components/Loader';
 
 // == Import
 import './styles.scss';
@@ -48,7 +49,7 @@ const App = () => {
     <div className="app">
       <Header categories={categoriesData} />
       <button type="button" onClick={loadPosts}>Charger les articles</button>
-      {loading && <div>Chargement en cours...</div>}
+      {loading && <Loader />}
       <Switch>
         {categoriesData.map((category) => (
           <Route exact path={category.route} key={category.label}>
