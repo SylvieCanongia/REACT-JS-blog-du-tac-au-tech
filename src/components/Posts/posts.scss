@@ -41,6 +41,14 @@
 
       .posts__single__excerpt {
         color: vars.$posts-text-color;
+        
+        em {
+          font-style: italic;
+        }
+
+        strong {
+          font-weight: bold;
+        }
       }
     }
   }

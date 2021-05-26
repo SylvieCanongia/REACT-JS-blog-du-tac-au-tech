@@ -1,5 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DOMPurify from 'dompurify';
+
+function createMarkup(htmlContent) {
+  return {
+    __html: DOMPurify.sanitize(htmlContent),
+  };
+}
 
 const Post = ({
   category,
@@ -8,7 +15,7 @@ const Post = ({
     <article className="posts__single">
       <h2 className="posts_single__title">{title}</h2>
       <div className="posts__single__category">{category}</div>
-      <p className="posts__single__excerpt">{excerpt}</p>
+      <p className="posts__single__excerpt" dangerouslySetInnerHTML={createMarkup(excerpt)} />
     </article>
 );
 
