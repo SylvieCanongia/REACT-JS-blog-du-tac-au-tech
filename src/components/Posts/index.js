@@ -24,7 +24,7 @@ Posts.propTypes = {
       id: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
-  category: PropTypes.string.isRequired,
+  categoryLabel: PropTypes.string.isRequired,
 };
 
 export default Posts;
