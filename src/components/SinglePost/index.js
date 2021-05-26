@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
+import { getPostBySlug } from 'src/utils/selectors';
+
 import './singlePost.scss';
 
 const SinglePost = ({ posts }) => {
@@ -9,7 +11,8 @@ const SinglePost = ({ posts }) => {
   const { slug } = useParams();
   // console.log(slug);
 
-  const result = posts.find((post) => post.slug === slug);
+  // get the article from the slug
+  const result = getPostBySlug(posts, slug);
   // console.log(result);
 
   return (

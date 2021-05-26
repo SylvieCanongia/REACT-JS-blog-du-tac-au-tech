@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-//  get the posts for a category
 
+//  get the posts for a category
 export const getPostsByCategory = (postsData, category) => {
   let result = postsData;
   if (category !== 'Accueil') {
@@ -8,3 +8,13 @@ export const getPostsByCategory = (postsData, category) => {
   }
   return result;
 };
+
+/**
+ * get a post for a slug
+ * @param {Array} posts the array into which searching
+ * @param {String} slug the slug to look for
+ * @returns a post, or undefined
+ */
+export const getPostBySlug = (posts, slug) => (
+  posts.find((post) => post.slug === slug)
+);
