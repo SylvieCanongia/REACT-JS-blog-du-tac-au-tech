@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './notFound.scss';
 
+/** 404 page component */
 const NotFound = () => (
   <div className="notFound">
     <p className="notFound__404">404</p>

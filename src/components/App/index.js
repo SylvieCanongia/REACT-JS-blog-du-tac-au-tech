@@ -24,6 +24,7 @@ const App = () => {
   const [loadingPosts, setLoadingPosts] = useState(true);
 
   const [categories, setCategories] = useState([]);
+
   // tell if  categories loading is in progress
   const [loadingCategories, setLoadingCategories] = useState(true);
 

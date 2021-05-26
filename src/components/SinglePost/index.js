@@ -6,12 +6,13 @@ import { getPostBySlug } from 'src/utils/selectors';
 
 import './singlePost.scss';
 
+/** Get the single post to display */
 const SinglePost = ({ posts }) => {
-  // get the url parameters
+  /** get the url parameters */
   const { slug } = useParams();
   // console.log(slug);
 
-  // get the article from the slug
+  /** get the article from the slug */
   const result = getPostBySlug(posts, slug);
   // console.log(result);
 

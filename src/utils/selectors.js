@@ -1,6 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 
-//  get the posts for a category
+/**
+ * get the posts for a category
+ * @param {Array} postsData the array containing posts data
+ * @param {String} category the category label
+ * @returns all the posts of a category
+ */
 export const getPostsByCategory = (postsData, category) => {
   let result = postsData;
   if (category !== 'Accueil') {

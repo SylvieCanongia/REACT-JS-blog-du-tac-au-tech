@@ -17,14 +17,14 @@ const Post = ({
   slug,
 }) => (
 
-    // update of the url into a link for displaying single articles
-    <Link to={`/post/${slug}`}>
-      <article className="posts__single">
-        <h2 className="posts_single__title">{title}</h2>
-        <div className="posts__single__category">{category}</div>
-        <p className="posts__single__excerpt" dangerouslySetInnerHTML={createMarkup(excerpt)} />
-      </article>
-    </Link>
+  // update of the url into a link for displaying single articles
+  <Link to={`/post/${slug}`}>
+    <article className="posts__single">
+      <h2 className="posts_single__title">{title}</h2>
+      <div className="posts__single__category">{category}</div>
+      <p className="posts__single__excerpt" dangerouslySetInnerHTML={createMarkup(excerpt)} />
+    </article>
+  </Link>
 );
 
 Post.propTypes = {

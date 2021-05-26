@@ -4,6 +4,7 @@ import Post from './Post';
 
 import './posts.scss';
 
+/** Parent component for displaying all posts */
 const Posts = ({ posts, categoryLabel }) => (
   <main className="posts">
     <h1 className="posts__title">{categoryLabel === 'Accueil' ? 'Du tac au tech' : categoryLabel }</h1>

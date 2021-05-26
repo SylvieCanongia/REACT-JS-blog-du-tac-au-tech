@@ -5,8 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 import './header.scss';
 
-/* header__link--active */
-
 const Header = ({ categories }) => (
   <header className="header">
     <nav className="header__nav">
