@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.singlePost {
+  padding-inline: vars.$gutter;
+
+  .posts_single__title {
+    color: vars.$title-color;
+    font-size: vars.$title-font-size-medium;
+  }
+
+  .posts__single__category {
+    background: vars.$primary-color;
+    width: fit-content;
+    color: vars.$light-color;
+    text-transform: uppercase;
+    padding: (vars.$gutter-base * 0.25) (vars.$gutter-base * 1.5);
+    margin-block: vars.$gutter-base;
+    font-size: vars.$category-font-size;
+    border-radius: vars.$base-radius;
+  }
+
+  .posts__single__content {
+    color: vars.$posts-text-color;
+  }
+
+}

@@ -11,6 +11,7 @@ import Posts from 'src/components/Posts';
 import Footer from 'src/components/Footer';
 import NotFound from 'src/components/NotFound';
 import Loader from 'src/components/Loader';
+import SinglePost from 'src/components/SinglePost';
 
 // == Import
 import './styles.scss';
@@ -86,6 +87,9 @@ const App = () => {
             />
           </Route>
         ))}
+        <Route path="/post/:slug">
+          <SinglePost posts={posts} />
+        </Route>
         <Redirect from="/jquery" to="/autre" />
         <Route>
           <NotFound />
