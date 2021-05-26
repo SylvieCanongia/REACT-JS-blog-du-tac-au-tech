@@ -24,10 +24,6 @@ const SinglePost = ({ posts }) => {
 SinglePost.propTypes = {
   posts: PropTypes.arrayOf(
     PropTypes.shape({
-      // id: PropTypes.number.isRequired,
-      category: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      excerpt: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
