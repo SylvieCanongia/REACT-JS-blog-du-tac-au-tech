@@ -80,7 +80,7 @@ const App = () => {
       <Switch>
         {categories.map((category) => (
           <Route exact path={category.route} key={category.label}>
-            <Posts posts={getPostsByCategory(posts, category.label)} />
+            <Posts posts={getPostsByCategory(posts, category.label)} categoryLabel={category.label} />
           </Route>
         ))}
         <Redirect from="/jquery" to="/autre" />

@@ -4,9 +4,9 @@ import Post from './Post';
 
 import './posts.scss';
 
-const Posts = ({ posts }) => (
+const Posts = ({ posts, categoryLabel }) => (
   <main className="posts">
-    <h1 className="posts__title">Du tac au tech</h1>
+    <h1 className="posts__title">{categoryLabel === 'Accueil' ? 'Du tac au tech' : categoryLabel }</h1>
     <section className="posts__wrapper">
       {posts.map((post) => (
         <Post
@@ -24,6 +24,7 @@ Posts.propTypes = {
       id: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Posts;
