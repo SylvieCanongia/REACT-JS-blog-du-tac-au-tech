@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 // import postsData from 'src/data/posts';
-import categoriesData from 'src/data/categories';
+// import categoriesData from 'src/data/categories';
 
 import { getPostsByCategory } from 'src/utils/selectors';
 import Header from 'src/components/Header';
@@ -19,8 +19,12 @@ import './styles.scss';
 const App = () => {
   // articles list
   const [posts, setPosts] = useState([]);
-  // tell if loading is in progress
-  const [loading, setLoading] = useState(true);
+  // tell if  articles loading is in progress
+  const [loadingPosts, setLoadingPosts] = useState(true);
+
+  const [categories, setCategories] = useState([]);
+  // tell if  categories loading is in progress
+  const [loadingCategories, setLoadingCategories] = useState(true);
 
   const loadPosts = () => {
     // setLoading(true);
@@ -37,21 +41,44 @@ const App = () => {
       })
       .finally(() => {
         // always executed
-        setLoading(false);
+        setLoadingPosts(false);
+      });
+  };
+
+  const loadCategories = () => {
+    axios.get('https://oclock-open-apis.now.sh/api/blog/categories')
+      .then((response) => {
+        // handle success
+        // console.log(response.data);
+        setCategories(response.data);
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      })
+      .finally(() => {
+        // always executed
+        setLoadingCategories(false);
       });
   };
 
   // effect only after the first render of app
   useEffect(() => {
+    loadCategories();
     loadPosts();
   }, []);
 
   return (
     <div className="app">
-      <Header categories={categoriesData} />
-      {loading && <Loader />}
+      <Header categories={categories} />
+
+      {/* display the loader until categories and posts are loaded */}
+      {(loadingCategories || loadingPosts) && <Loader />}
+
+      {/* loads pages only when categories and articles are loaded */}
+      {!loadingCategories && !loadingPosts && (
       <Switch>
-        {categoriesData.map((category) => (
+        {categories.map((category) => (
           <Route exact path={category.route} key={category.label}>
             <Posts posts={getPostsByCategory(posts, category.label)} />
           </Route>
@@ -61,6 +88,8 @@ const App = () => {
           <NotFound />
         </Route>
       </Switch>
+      )}
+
       <Footer />
     </div>
   );
